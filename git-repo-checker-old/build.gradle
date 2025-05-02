@@ -1,0 +1,33 @@
+plugins {
+    id("java")
+    id("application")
+}
+
+group = "com.example"
+version = "1.0-SNAPSHOT"
+
+dependencies {
+    // Add any dependencies your project needs here
+    // For example, if you're using a library for Git operations:
+    implementation("org.eclipse.jgit:org.eclipse.jgit:5.13.0.202109080827-r")
+}
+
+application {
+    // Define the main class for the application
+    mainClass = "com.example.GitRepoChecker"
+}
+
+tasks.register("runGitRepoChecker") {
+    group = "application"
+    description = "Runs the Git repository checker."
+    dependsOn("classes")
+    doLast {
+        javaexec {
+            mainClass = "com.example.GitRepoChecker"
+            classpath = sourceSets.main.runtimeClasspath
+            if (System.getProperty("directory") != null) {
+                args System.getProperty("directory") // Read the directory from the command line
+            }
+        }
+    }
+}
