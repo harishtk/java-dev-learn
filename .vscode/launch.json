@@ -1,0 +1,59 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "InterceptDemo",
+            "request": "launch",
+            "mainClass": "InterceptDemo"
+        },
+        {
+            "type": "java",
+            "name": "ReadingAnnotations",
+            "request": "launch",
+            "mainClass": "ReadingAnnotations"
+        },
+        {
+            "type": "java",
+            "name": "Annotations",
+            "request": "launch",
+            "mainClass": "Annotations"
+        },
+        {
+            "type": "java",
+            "name": "MethodInvocation",
+            "request": "launch",
+            "mainClass": "MethodInvocation"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "GitRepoChecker",
+            "request": "launch",
+            "mainClass": "org.example.GitRepoChecker",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
+            "name": "GitRepoChecker(1)",
+            "request": "launch",
+            "mainClass": "com.example.GitRepoChecker",
+            "projectName": "git-repo-checker-git-repo-checker-old"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.jmhexample.app.App",
+            "projectName": "jmh-test"
+        }
+    ]
+}

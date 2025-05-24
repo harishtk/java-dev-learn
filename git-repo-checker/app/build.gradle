@@ -54,6 +54,9 @@ tasks.register("runGitRepoChecker", JavaExec) {
         println("Args: " + System.getProperty("directory"))
         args System.getProperty("directory")
     }
+    if (System.getProperty("maxDepth") != null) {
+        args System.getProperty("maxDepth")
+    }
 }
 
 tasks.register("listConfigs") {

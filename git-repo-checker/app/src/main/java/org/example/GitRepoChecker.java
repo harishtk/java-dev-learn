@@ -24,15 +24,23 @@ public class GitRepoChecker {
             return;
         }
 
+        int maxDepth = 3;
+        if (args.length > 1) {
+            try {
+                maxDepth = Integer.parseInt(args[1]);
+                System.out.println("maxDepth=" + maxDepth);
+            } catch (Exception ignore) {}
+        }
+
         final GitRepoChecker app = new GitRepoChecker();
         long startTime = System.currentTimeMillis();
-        app.run(directoryPath);
+        app.run(directoryPath, maxDepth);
 
         long elapsed = System.currentTimeMillis() - startTime;
         System.out.println("Completed in " + elapsed + "ms");
     }
 
-    private void run(String directoryPath) {
+    private void run(String directoryPath, int maxDepth) {
         Path startPath = Paths.get(directoryPath);
         System.out.println("Walking.. " + startPath);
         
@@ -40,7 +48,7 @@ public class GitRepoChecker {
                 Runtime.getRuntime().availableProcessors() / 2
         );
 
-        try (Stream<Path> stream = Files.walk(startPath, 3)) {
+        try (Stream<Path> stream = Files.walk(startPath, maxDepth)) {
             stream.filter(Files::isDirectory)
                     .forEach(path -> {
                         Path gitDir = path.resolve(".git");
