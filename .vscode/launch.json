@@ -6,6 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MemoryAccess",
+            "request": "launch",
+            "mainClass": "MemoryAccess"
+        },
+        {
+            "type": "java",
+            "name": "ListProviders",
+            "request": "launch",
+            "mainClass": "ListProviders"
+        },
+        {
+            "type": "java",
             "name": "InterceptDemo",
             "request": "launch",
             "mainClass": "InterceptDemo"
